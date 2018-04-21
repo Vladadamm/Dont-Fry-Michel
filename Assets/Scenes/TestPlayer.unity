@@ -123,9 +123,10 @@ GameObject:
   - component: {fileID: 95055217}
   - component: {fileID: 95055216}
   - component: {fileID: 95055215}
+  - component: {fileID: 95055218}
   m_Layer: 0
   m_Name: brick-1
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -212,6 +213,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &95055218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 95055214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b49eb9ae86e8a7c41abed2dac23c0d66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 11
+  health: 0
 --- !u!1 &362917824
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,6 +384,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00b7f2d8a1614e3db1d45457b23788d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1066783156
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4382663053518310, guid: ce2142b19db774bb5b06915d2c84fe57, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.046
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382663053518310, guid: ce2142b19db774bb5b06915d2c84fe57, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.969
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382663053518310, guid: ce2142b19db774bb5b06915d2c84fe57, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382663053518310, guid: ce2142b19db774bb5b06915d2c84fe57, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382663053518310, guid: ce2142b19db774bb5b06915d2c84fe57, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382663053518310, guid: ce2142b19db774bb5b06915d2c84fe57, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382663053518310, guid: ce2142b19db774bb5b06915d2c84fe57, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382663053518310, guid: ce2142b19db774bb5b06915d2c84fe57, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ce2142b19db774bb5b06915d2c84fe57, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1067618884
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,8 +438,8 @@ GameObject:
   - component: {fileID: 1067618886}
   - component: {fileID: 1067618885}
   m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
+  m_Name: Fish_player
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
