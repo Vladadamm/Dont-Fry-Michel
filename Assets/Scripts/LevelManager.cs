@@ -26,7 +26,15 @@ public class LevelManager : MonoBehaviour {
 			float x=Random.Range(AreaLimits.LeftLimit()+0.5f,AreaLimits.RightLimit()-0.5f);
 			Vector3 pos = new Vector3(x, AreaLimits.UpLimit()+1+spawnTimer*downSpeed, 10);
 			spawnTimer += spawnInterval / downSpeed;
-			GameObject g = (GameObject)GameObject.Instantiate (Resources.Load ("Block"));
+			float randBlock = Random.value;
+			GameObject g;
+			if (randBlock < BlockWeightShort) {
+				g=(GameObject)GameObject.Instantiate (Resources.Load ("Block"));
+			} else if (randBlock < BlockWeightShort + BlockWeightMedium) {
+				g=(GameObject)GameObject.Instantiate (Resources.Load ("Block"));
+			} else {
+				g=(GameObject)GameObject.Instantiate (Resources.Load ("Block"));
+			}
 			g.transform.position = pos;
 			g.transform.SetParent (transform);
 		}
@@ -44,7 +52,7 @@ public class LevelManager : MonoBehaviour {
 	public float downSpeed=0.2f;
 
 	//Block Weights
-	public float BlockWeightShort = 0.3;
-	public float BlockWeightMedium = 0.4;
-	public float BlockWeightLong = 0.3;
+	public float BlockWeightShort = 0.3f;
+	public float BlockWeightMedium = 0.4f;
+	public float BlockWeightLong = 0.3f;
 }
