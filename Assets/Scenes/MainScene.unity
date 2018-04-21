@@ -319,6 +319,8 @@ MonoBehaviour:
   spawnInterval: 1
   spawnTimer: 0
   downSpeed: 0.5
+  lastSizeSpawned: 0
+  lastColumnSpawned: 0
   BlockWeightShort: 0.3
   BlockWeightMedium: 0.4
   BlockWeightLong: 0.3
@@ -512,7 +514,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.8088235, g: 0.724906, b: 0.25573096, a: 0}
+  m_BackGroundColor: {r: 0.20392157, g: 0.28627452, b: 0.53333336, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
