@@ -9,7 +9,7 @@ public class Ship : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		transform.position = new Vector3 ((AreaLimits.LeftLimit () + AreaLimits.RightLimit ()) / 2, AreaLimits.BottomLimit ()+0.5f, 0);
 	}
 	
 	// Update is called once per frame
