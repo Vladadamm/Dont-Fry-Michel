@@ -29,7 +29,14 @@ public class LevelManager : MonoBehaviour {
 			float randBlock = Random.value;
 			string chosenBlock;
 			if (randBlock < BlockWeightShort) {
-				x=Random.Range(0,AreaLimits.BlockColumnsCount());
+				//Bloc court sur bloc court : pas possible
+				if (lastSizeSpawned == 1) {
+					x = Random.Range (0, AreaLimits.BlockColumnsCount ()-1);
+					if (x >= lastColumnSpawned)
+						++x;
+				} else {
+					x = Random.Range (0, AreaLimits.BlockColumnsCount ());
+				}
 				chosenBlock = "BlockShort";
 				lastSizeSpawned = 1;
 			} else if (randBlock < BlockWeightShort + BlockWeightMedium) {
@@ -53,6 +60,13 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	void InitSpawn(){
+		Vector3 pos = new Vector3(ConvertColumnToPos(AreaLimits.BlockColumnsCount()/2), AreaLimits.UpLimit()+1+spawnTimer*downSpeed, 0);
+		GameObject g;
+		g=(GameObject)GameObject.Instantiate (Resources.Load ("BlockLong"));
+		g.transform.position = pos;
+		g.transform.SetParent (transform);
+		lastColumnSpawned = AreaLimits.BlockColumnsCount()/2;
+		lastSizeSpawned = 3;
 		for(int i=0;i<(AreaLimits.UpLimit()-AreaLimits.BottomLimit())/(spawnInterval/downSpeed);++i){
 			UpdateGen(spawnInterval/downSpeed);
 		}
