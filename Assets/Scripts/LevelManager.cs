@@ -29,11 +29,11 @@ public class LevelManager : MonoBehaviour {
 			float randBlock = Random.value;
 			GameObject g;
 			if (randBlock < BlockWeightShort) {
-				g=(GameObject)GameObject.Instantiate (Resources.Load ("Block"));
+				g=(GameObject)GameObject.Instantiate (Resources.Load ("BlockShort"));
 			} else if (randBlock < BlockWeightShort + BlockWeightMedium) {
-				g=(GameObject)GameObject.Instantiate (Resources.Load ("Block"));
+				g=(GameObject)GameObject.Instantiate (Resources.Load ("BlockMedium"));
 			} else {
-				g=(GameObject)GameObject.Instantiate (Resources.Load ("Block"));
+				g=(GameObject)GameObject.Instantiate (Resources.Load ("BlockLong"));
 			}
 			g.transform.position = pos;
 			g.transform.SetParent (transform);

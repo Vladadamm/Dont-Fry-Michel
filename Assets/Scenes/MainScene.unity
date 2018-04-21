@@ -319,6 +319,9 @@ MonoBehaviour:
   spawnInterval: 1
   spawnTimer: 0
   downSpeed: 0.5
+  BlockWeightShort: 0.3
+  BlockWeightMedium: 0.4
+  BlockWeightLong: 0.3
 --- !u!1 &1693894241
 GameObject:
   m_ObjectHideFlags: 0
