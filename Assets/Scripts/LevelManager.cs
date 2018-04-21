@@ -42,4 +42,9 @@ public class LevelManager : MonoBehaviour {
 	public float spawnInterval=1;
 	public float spawnTimer;
 	public float downSpeed=0.2f;
+
+	//Block Weights
+	public float BlockWeightShort = 0.3;
+	public float BlockWeightMedium = 0.4;
+	public float BlockWeightLong = 0.3;
 }
