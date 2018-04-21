@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Fish : MonoBehaviour {
+
+	public	GameObject	Michel2;
+	public	float	size_sprite = 0.2f;
 	public Rigidbody2D rb;
 	public int	jump = 300;
 	public int	move = 100;
@@ -14,12 +17,17 @@ public class Fish : MonoBehaviour {
 	void Start () {
 		transform.position = new Vector3 ((AreaLimits.LeftLimit () + AreaLimits.RightLimit ()) / 2, +AreaLimits.UpLimit(), 0);
 		rb = GetComponent<Rigidbody2D>();
-
 		is_jump = false;
+		Michel2.SetActive(false);
 	}
 
 	// Update is called once per frame
 	void FixedUpdate () {
+		InputManage ();
+	}
+
+
+	void InputManage(){
 		if (Input.GetKey (InputManager.getInstance ().keyBinds ["Fish_right"]) || Input.GetKey (InputManager.getInstance ().keyBinds ["Fish_left"]) || (Input.GetKey (InputManager.getInstance ().keyBinds ["Fish_jump"]) && is_jump == false)) {
 			y = rb.velocity.y;
 			x = rb.velocity.x;
@@ -29,11 +37,31 @@ public class Fish : MonoBehaviour {
 			if (Input.GetKey (InputManager.getInstance ().keyBinds ["Fish_left"])) {
 				x = -move * Time.fixedDeltaTime;
 			}
-			if (Input.GetKey (InputManager.getInstance ().keyBinds ["Fish_jump"]) && is_jump == false) {
+				if (Input.GetKey (InputManager.getInstance ().keyBinds ["Fish_jump"]) && is_jump == false) {
 				y = jump * Time.fixedDeltaTime;
 				is_jump = true;
 			}
 			rb.velocity = new Vector2 (x, y);
+			if (transform.position.x < AreaLimits.LeftLimit () + size_sprite) {
+				if (transform.position.x < AreaLimits.LeftLimit () - size_sprite) {
+					transform.position = new Vector3 (AreaLimits.RightLimit () - size_sprite, transform.position.y);
+					//Michel2.SetActive (false);
+				}/* else {
+					Michel2.SetActive (true);
+					transform.position = new Vector3 (AreaLimits.LeftLimit () + size_sprite, transform.position.y);
+				}*/
+			} else if (transform.position.x > AreaLimits.RightLimit () - size_sprite){
+				
+				if ((transform.position.x > AreaLimits.RightLimit () + size_sprite)) {
+					transform.position = new Vector3 (AreaLimits.LeftLimit () + size_sprite, transform.position.y);
+					//Michel2.SetActive (false);
+					//Michel2.
+				} /*else {
+					Michel2.SetActive (true);
+					Michel2.transform.position = new Vector3 (AreaLimits.LeftLimit () + size_sprite, transform.position.y);
+				}*/
+			}
+
 		}
 
 	}
