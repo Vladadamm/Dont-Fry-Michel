@@ -11,6 +11,12 @@ public class Ship : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (Input.get
+		if (Input.GetKey (InputManager.getInstance ().keyBinds ["Ship_right"])) {
+			transform.position = new Vector2 (transform.position.x + 3f * Time.fixedDeltaTime, transform.position.y);
+		} else if (Input.GetKey (InputManager.getInstance ().keyBinds ["Ship_left"])) {
+			transform.position = new Vector2 (transform.position.x - 3f * Time.fixedDeltaTime, transform.position.y);
+		} else if (Input.GetKey (InputManager.getInstance ().keyBinds ["Ship_fire"])) {
+			Debug.Log ("Fire");
+		}
 	}
 }

@@ -20,14 +20,16 @@ public class InputManager {
 	// Use this for initialization
 	private InputManager () {
 		keyBinds = new Dictionary<string, KeyCode> ();
-		keyBinds.Add ("Up", KeyCode.Z);
-		keyBinds.Add ("Down", KeyCode.S);
-		keyBinds.Add ("Left", KeyCode.Q);
-		keyBinds.Add ("Right", KeyCode.D);
-		keyBinds.Add ("Space", KeyCode.Space);
-		keyBinds.Add ("Esc", KeyCode.Escape);
-		keyBinds.Add ("LeftClick", KeyCode.Mouse0);
-		keyBinds.Add ("RightClick", KeyCode.Mouse1);
+		keyBinds.Add ("Ship_fire", KeyCode.UpArrow);
+		keyBinds.Add ("Ship_left", KeyCode.LeftArrow);
+		keyBinds.Add ("Ship_right", KeyCode.RightArrow);
+		keyBinds.Add ("Ship_power", KeyCode.RightShift);
+		keyBinds.Add ("Fish_right", KeyCode.D);
+		keyBinds.Add ("Fish_left", KeyCode.Q);
+		keyBinds.Add ("Fish_jump", KeyCode.Z);
+		keyBinds.Add ("Fish_build", KeyCode.S);
+		keyBinds.Add ("Fish_power", KeyCode.LeftShift);
+		keyBinds.Add ("Escape", KeyCode.Escape);
 	}
 	
 	//Redéfinition d'un keyBind 
