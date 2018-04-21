@@ -22,14 +22,14 @@ public class LevelManager : MonoBehaviour {
 				t.GetComponent<Block> ().Damage (1);
 			t.position += Vector3.down*downSpeed * deltaTime;
 		}
-		if (spawnTimer < 0) {
+		if (spawnTimer <= 0) {
 			int x=0;
 			spawnTimer += spawnInterval / downSpeed;
 			Vector3 pos = new Vector3(0, AreaLimits.UpLimit()+1+spawnTimer*downSpeed, 0);
 			float randBlock = Random.value;
 			string chosenBlock;
 			if (randBlock < BlockWeightShort) {
-				//Bloc court sur bloc court : pas possible
+				//Bloc court couvrant bloc court : pas possible
 				if (lastSizeSpawned == 1) {
 					x = Random.Range (0, AreaLimits.BlockColumnsCount ()-1);
 					if (x >= lastColumnSpawned)
@@ -40,12 +40,41 @@ public class LevelManager : MonoBehaviour {
 				chosenBlock = "BlockShort";
 				lastSizeSpawned = 1;
 			} else if (randBlock < BlockWeightShort + BlockWeightMedium) {
-				x=Random.Range(0,AreaLimits.BlockColumnsCount()-1);
+				//Bloc medium couvrant bloc medium : pas possible
+				if (lastSizeSpawned == 2) {
+					x = Random.Range (0, AreaLimits.BlockColumnsCount () - 2);
+					if (x >= lastColumnSpawned)
+						++x;
+				} else if (lastSizeSpawned == 1) {
+					//Bloc medium couvrant bloc court : pas possible
+					x = Random.Range (0, AreaLimits.BlockColumnsCount () - 3);
+					if (x >= lastColumnSpawned-1)
+						x += 2;;
+				} else {
+					x = Random.Range (0, AreaLimits.BlockColumnsCount () - 1);
+				}
 				pos.x += 0.5f;
 				chosenBlock = "BlockMedium";
 				lastSizeSpawned = 2;
 			} else {
-				x=Random.Range(1,AreaLimits.BlockColumnsCount()-1);
+				//Bloc long couvrant bloc long : pas possible
+				if (lastSizeSpawned == 3) {
+					x = Random.Range (0, AreaLimits.BlockColumnsCount ()-3);
+					if (x >= lastColumnSpawned)
+						++x;
+				} else if(lastSizeSpawned==2){
+					//Bloc long couvrant bloc medium : pas possible
+					x = Random.Range (0, AreaLimits.BlockColumnsCount ()-4);
+					if (x >= lastColumnSpawned-1)
+						x += 2;;
+				}else if(lastSizeSpawned==1){
+					//Bloc long couvrant bloc court : pas possible
+					x = Random.Range (0, AreaLimits.BlockColumnsCount ()-5);
+					if (x >= lastColumnSpawned-2)
+						x += 3;
+
+				}
+				pos.x += 1f;
 				chosenBlock = "BlockLong";
 				lastSizeSpawned = 3;
 			}
@@ -70,6 +99,7 @@ public class LevelManager : MonoBehaviour {
 		for(int i=0;i<(AreaLimits.UpLimit()-AreaLimits.BottomLimit())/(spawnInterval/downSpeed);++i){
 			UpdateGen(spawnInterval/downSpeed);
 		}
+		spawnTimer = spawnInterval / downSpeed;
 	}
 
 	float ConvertColumnToPos(int x){
