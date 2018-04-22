@@ -2,32 +2,55 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundManager {
+public class SoundManager : MonoBehaviour {
 
-	Object[] audio;
+	public	AudioClip[] Fire_audio;
+	public	AudioClip[] DeathCuisto_audio;
+	public	AudioClip[] HitBlock_audio;
+	public	AudioClip[] BonusCuisto_audio;
+	float	Fire_time;
+	float	HitBlock_time;
+	float	DeathCuisto_time;
+	float	BonusCuisto_time;
 
-
-	void Start(){
-		audio = Resources.LoadAll("SOUND"); 
-	}
 
 	public void MakeFireSound()
 	{
-		MakeSound((AudioSource) audio[7 + Random.Range (0, 4)]);
+
+		if (Time.fixedTime > Fire_time + 0.1f) {
+			MakeSound (Fire_audio [Random.Range (0, 4)]);
+			Fire_time = Time.fixedTime;
+		}
 	}
 
-	public void MakeDeathCuistotSound()
+	public  void MakeDeathCuistotSound()
 	{
-		MakeSound((AudioSource)audio[1]);
+		if (Time.fixedTime > DeathCuisto_time + 0.1f) {
+			MakeSound(DeathCuisto_audio[Random.Range(0, 3)]);
+			DeathCuisto_time = Time.fixedTime;
+		}
 	}
 
-	public void MakeHitBlockSound()
-	{
-		MakeSound((AudioSource)audio[2]);
+	public void MakeHitBlockSound(){
+		if (Time.fixedTime > HitBlock_time + 0.1f) {
+			MakeSound(HitBlock_audio [Random.Range (0, 5)]);
+			HitBlock_time = Time.fixedTime;
+		}
 	}
 
-	private void MakeSound(AudioSource son)
+	public void MakeBonusSound(){
+		if (Time.fixedTime > BonusCuisto_time + 0.1f) {
+			MakeSound(HitBlock_audio[Random.Range(0, 5)]);
+			BonusCuisto_time = Time.fixedTime;
+		}
+	}
+
+
+	private void MakeSound(AudioClip son)
 	{
-		son.Play();
+		AudioSource.PlayClipAtPoint(son, GetComponent<Camera>().transform.position);
+		GetComponent<AudioSource>().clip = son;
+		GetComponent<AudioSource>().Play();
+
 	}
 }
