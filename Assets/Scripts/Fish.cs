@@ -9,6 +9,7 @@ public class Fish : MonoBehaviour {
 	public Rigidbody2D rb;
 	public int	jump = 300;
 	public int	move = 100;
+	int boost = 1;
 	bool is_jump;
 	float x;
 	float y;
@@ -24,6 +25,28 @@ public class Fish : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		InputManage ();
+		if (transform.position.x < AreaLimits.LeftLimit () + size_sprite) {
+			if (transform.position.x < AreaLimits.LeftLimit () - size_sprite) {
+				transform.position = new Vector3 (AreaLimits.RightLimit () - size_sprite, transform.position.y);
+				//Michel2.SetActive (false);
+			}/* else {
+					Michel2.SetActive (true);
+					transform.position = new Vector3 (AreaLimits.LeftLimit () + size_sprite, transform.position.y);
+				}*/
+		} else if (transform.position.x > AreaLimits.RightLimit () - size_sprite){
+
+			if ((transform.position.x > AreaLimits.RightLimit () + size_sprite)) {
+				transform.position = new Vector3 (AreaLimits.LeftLimit () + size_sprite, transform.position.y);
+				//Michel2.SetActive (false);
+				//Michel2.
+			} /*else {
+					Michel2.SetActive (true);
+					Michel2.transform.position = new Vector3 (AreaLimits.LeftLimit () + size_sprite, transform.position.y);
+				}*/
+		}
+		if (transform.position.y < AreaLimits.BottomLimit () - size_sprite) {
+			GameObject.FindGameObjectWithTag ("Finish").transform.GetChild (0).gameObject.SetActive (true);
+		}
 	}
 
 
@@ -32,35 +55,16 @@ public class Fish : MonoBehaviour {
 			y = rb.velocity.y;
 			x = rb.velocity.x;
 			if (Input.GetKey (InputManager.getInstance ().keyBinds ["Fish_right"])) {
-				x = move * Time.fixedDeltaTime;
+				x = boost *  move * Time.fixedDeltaTime;
 			}
 			if (Input.GetKey (InputManager.getInstance ().keyBinds ["Fish_left"])) {
-				x = -move * Time.fixedDeltaTime;
+				x =  boost *  -move * Time.fixedDeltaTime;
 			}
 				if (Input.GetKey (InputManager.getInstance ().keyBinds ["Fish_jump"]) && is_jump == false) {
-				y = jump * Time.fixedDeltaTime;
+				y =   jump * Time.fixedDeltaTime;
 				is_jump = true;
 			}
 			rb.velocity = new Vector2 (x, y);
-			if (transform.position.x < AreaLimits.LeftLimit () + size_sprite) {
-				if (transform.position.x < AreaLimits.LeftLimit () - size_sprite) {
-					transform.position = new Vector3 (AreaLimits.RightLimit () - size_sprite, transform.position.y);
-					//Michel2.SetActive (false);
-				}/* else {
-					Michel2.SetActive (true);
-					transform.position = new Vector3 (AreaLimits.LeftLimit () + size_sprite, transform.position.y);
-				}*/
-			} else if (transform.position.x > AreaLimits.RightLimit () - size_sprite){
-				
-				if ((transform.position.x > AreaLimits.RightLimit () + size_sprite)) {
-					transform.position = new Vector3 (AreaLimits.LeftLimit () + size_sprite, transform.position.y);
-					//Michel2.SetActive (false);
-					//Michel2.
-				} /*else {
-					Michel2.SetActive (true);
-					Michel2.transform.position = new Vector3 (AreaLimits.LeftLimit () + size_sprite, transform.position.y);
-				}*/
-			}
 
 		}
 
@@ -69,4 +73,10 @@ public class Fish : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D collision) {
 		is_jump = false;
 	}
+
+	public void SetBoost()
+	{
+		boost += 1;
+	}
+
 }

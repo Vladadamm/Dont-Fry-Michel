@@ -26,5 +26,11 @@ public class Bullet : MonoBehaviour {
 			if (life <= 0)
 				Destroy (gameObject);
 		}
+		if (collider.CompareTag ("Player")) {
+			collider.transform.GetComponent<Fish> ().SetBoost ();
+			life -= 1;
+			if (life <= 0)
+				Destroy (gameObject);
+		}
 	}
 }

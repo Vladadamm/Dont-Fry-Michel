@@ -29,10 +29,9 @@ public class Ship : MonoBehaviour {
 			else if (speed < 0)
 				speed += Time.fixedDeltaTime;
 		}
-		if (Input.GetKey (InputManager.getInstance ().keyBinds ["Ship_fire"]) && (Time.fixedTime > last_shot + fire_rate)) {
+		if (Input.GetKeyDown(InputManager.getInstance ().keyBinds ["Ship_fire"])) {
 			GameObject bullet = (GameObject)GameObject.Instantiate (Resources.Load ("Bullet"));
 			bullet.transform.position = transform.position;
-			last_shot = Time.fixedTime;
 		}
 		if (transform.position.x + speed * Time.fixedDeltaTime > AreaLimits.LeftLimit() + size_sprite && transform.position.x + speed * Time.fixedDeltaTime < AreaLimits.RightLimit() - size_sprite)
 			transform.position = new Vector3 (transform.position.x + speed * Time.fixedDeltaTime, transform.position.y);
