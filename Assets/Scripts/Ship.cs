@@ -11,13 +11,14 @@ public class Ship : MonoBehaviour {
 	public	int	max_bullet = 5;
 	public float	speed;
 	float last_load;
-	int nb_bullet = max_bullet;
+	int nb_bullet;
 	bool fire;
 
 	// Use this for initialization
 	void Start () {
 		transform.position = new Vector3 ((AreaLimits.LeftLimit () + AreaLimits.RightLimit ()) / 2, AreaLimits.BottomLimit ()+0.5f, 0);
 		enabled = false;
+		nb_bullet = max_bullet;
 	}
 	
 	// Update is called once per frame
