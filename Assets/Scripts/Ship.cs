@@ -9,7 +9,7 @@ public class Ship : MonoBehaviour {
 	public float	max_speed = 5f;
 	public float	load_rate = 0.5f;
 	public	int	max_bullet = 5;
-	public float	speed;
+	float	speed;
 	float last_load;
 	int nb_bullet;
 
@@ -45,9 +45,9 @@ public class Ship : MonoBehaviour {
 				speed -= acceleration * Time.fixedDeltaTime;
 		} else {
 			if (speed > 0)
-				speed -= Time.fixedDeltaTime;
+				speed = Mathf.Max(0,speed-5*Time.fixedDeltaTime);
 			else if (speed < 0)
-				speed += Time.fixedDeltaTime;
+				speed = Mathf.Min(0,speed+5*Time.fixedDeltaTime);
 		}
 		if (Input.GetKey (InputManager.getInstance ().keyBinds ["Ship_fire"])) {
 			if (nb_bullet > 0) {
@@ -64,7 +64,6 @@ public class Ship : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D collider) {
 		if (collider.CompareTag ("Block")) {
-			Debug.Log ("here");
 			Camera.main.gameObject.GetComponent<GameLogicManager> ().EndGame (false);
 		}
 	}

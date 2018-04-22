@@ -2065,11 +2065,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animation: {fileID: 0}
   size_sprite: 0.2
-  acceleration: 5
+  acceleration: 20
   max_speed: 5
   load_rate: 0.5
   max_bullet: 5
-  speed: 0
 --- !u!212 &1928396778
 SpriteRenderer:
   m_ObjectHideFlags: 0
