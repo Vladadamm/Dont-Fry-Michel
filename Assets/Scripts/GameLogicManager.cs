@@ -8,7 +8,7 @@ public class GameLogicManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		timer = 5f;
+		timer = 4f;
 		state = 0;
 		fish.GetComponent<Rigidbody2D> ().gravityScale = 0;
 	}
@@ -16,12 +16,15 @@ public class GameLogicManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (state == 0) {
-			if (timer > 0) {
-				timer -= Time.fixedDeltaTime;
-				startPanel.GetComponentInChildren<Text> ().text = ((int)timer + 1).ToString();
-			} else {
+			if (timer > 1)
+				startPanel.GetComponentInChildren<Text> ().text = ((int)timer).ToString ();
+			else if (timer <= 1 && timer > 0) 
+				startPanel.transform.GetChild (1).gameObject.SetActive(true);
+			else {
+				startPanel.transform.GetChild (1).gameObject.SetActive(false);
 				BeginGame ();
 			}
+			timer -= Time.fixedDeltaTime;
 		}
 		if (state == 2) {
 			if (Input.GetKeyDown (InputManager.getInstance ().keyBinds ["Escape"]))
@@ -45,9 +48,9 @@ public class GameLogicManager : MonoBehaviour {
 		levelManager.GetComponent<LevelManager> ().enabled = false;
 		endPanel.SetActive (true);
 		if (p) {
-			endPanel.GetComponentInChildren<Text> ().text = "Player 2 wins";
+			endPanel.transform.GetChild (0).gameObject.SetActive(true);
 		} else {
-			endPanel.GetComponentInChildren<Text> ().text = "Player 1 wins";
+			endPanel.transform.GetChild (1).gameObject.SetActive(true);
 		}
 		state = 2;
 	}

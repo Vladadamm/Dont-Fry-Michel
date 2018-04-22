@@ -9,7 +9,7 @@ public class Fish : MonoBehaviour {
 	public Rigidbody2D rb;
 	public int	jump = 300;
 	public int	move = 100;
-	float boost = 0.01f;
+	float boost = 1f;
 	bool is_jump;
 	float x;
 	float y;
@@ -21,7 +21,6 @@ public class Fish : MonoBehaviour {
 		rb = GetComponent<Rigidbody2D>();
 		is_jump = false;
 		enabled = false;
-		//Michel2.SetActive(false);
 	}
 
 	// Update is called once per frame
@@ -30,21 +29,12 @@ public class Fish : MonoBehaviour {
 		if (transform.position.x < AreaLimits.LeftLimit () + size_sprite) {
 			if (transform.position.x < AreaLimits.LeftLimit () - size_sprite) {
 				transform.position = new Vector3 (AreaLimits.RightLimit () - size_sprite, transform.position.y);
-				//Michel2.SetActive (false);
-			}/* else {
-					Michel2.SetActive (true);
-					transform.position = new Vector3 (AreaLimits.LeftLimit () + size_sprite, transform.position.y);
-				}*/
+			}
 		} else if (transform.position.x > AreaLimits.RightLimit () - size_sprite){
 
 			if ((transform.position.x > AreaLimits.RightLimit () + size_sprite)) {
 				transform.position = new Vector3 (AreaLimits.LeftLimit () + size_sprite, transform.position.y);
-				//Michel2.SetActive (false);
-				//Michel2.
-			} /*else {
-					Michel2.SetActive (true);
-					Michel2.transform.position = new Vector3 (AreaLimits.LeftLimit () + size_sprite, transform.position.y);
-				}*/
+			}
 		}
 		if (transform.position.y < AreaLimits.BottomLimit () - size_sprite) {
 			Camera.main.gameObject.GetComponent<GameLogicManager> ().EndGame (true);
@@ -60,7 +50,7 @@ public class Fish : MonoBehaviour {
 				x = boost *  move * Time.fixedDeltaTime;
 			}
 			if (Input.GetKey (InputManager.getInstance ().keyBinds ["Fish_left"])) {
-				x =  boost *  -move * Time.fixedDeltaTime;
+				x =  boost * -move * Time.fixedDeltaTime;
 			}
 				if (Input.GetKey (InputManager.getInstance ().keyBinds ["Fish_jump"]) && is_jump == false) {
 				y =   jump * Time.fixedDeltaTime;
@@ -78,7 +68,7 @@ public class Fish : MonoBehaviour {
 
 	public void SetBoost()
 	{
-		boost += 0.1f;
+		boost += 0.01f;
 	}
 
 	void OnDisable(){

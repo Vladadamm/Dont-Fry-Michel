@@ -25,7 +25,7 @@ public class Ship : MonoBehaviour {
 		transform.position = new Vector3 ((AreaLimits.LeftLimit () + AreaLimits.RightLimit ()) / 2, AreaLimits.BottomLimit () + 1f, 0);
 		enabled = false;
 		sprites = Resources.LoadAll ("pipette-sprites-02");
-		nb_bullet = min_bullet;
+		nb_bullet = 0;
 		nbBulletThrown = 0;
 	}
 	
@@ -67,7 +67,7 @@ public class Ship : MonoBehaviour {
 			}
 			if (Input.GetKeyUp (InputManager.getInstance ().keyBinds ["Ship_fire"]))
 				nbBulletThrown = 0;
-			//GetComponent<SpriteRenderer>().sprite = (Sprite)sprites [nb_sprite * nb_bullet / max_bullet];
+			GetComponent<SpriteRenderer>().sprite = (Sprite)sprites [(nb_sprite * nb_bullet / max_bullet) + 1];
 			if (hasBuff) {
 				remainingBuffTime -= Time.fixedDeltaTime;
 				if (remainingBuffTime <= 0)

@@ -28,7 +28,7 @@ public class Block : MonoBehaviour {
 			GameObject.Destroy (gameObject);
 		} else {
 			linear_color ();
-			//transform.GetComponent<SpriteRenderer>().color = Color.white * (health / (float)maxHealth);
+
 		}
 	}
 
@@ -39,11 +39,11 @@ public class Block : MonoBehaviour {
 		float g = transform.GetComponent<SpriteRenderer> ().color.g;
 		float mult = health / ((float)maxHealth);
 		if (b > 0)
-		b *= mult;
+			b *= mult;
 		if (r > 0)
 			r *= mult;
 		if (g > 0)
-		g *= mult;
+			g *= mult;
 		transform.GetComponent<SpriteRenderer> ().color = new Color(r,g,b);
 		
 	}
