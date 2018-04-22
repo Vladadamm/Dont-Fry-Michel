@@ -39,6 +39,16 @@ public class GameLogicManager : MonoBehaviour {
 	}
 
 	public void EndGame(bool p){
+		fish.GetComponent<Rigidbody2D> ().gravityScale = 0;
+		fish.GetComponent<Fish> ().enabled = false;
+		pipette.GetComponent<Ship> ().enabled = false;
+		levelManager.GetComponent<LevelManager> ().enabled = false;
+		endPanel.SetActive (true);
+		if (p) {
+			endPanel.GetComponentInChildren<Text> ().text = "Player 2 wins";
+		} else {
+			endPanel.GetComponentInChildren<Text> ().text = "Player 1 wins";
+		}
 		state = 2;
 	}
 

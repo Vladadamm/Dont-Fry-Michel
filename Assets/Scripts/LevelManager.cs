@@ -24,6 +24,7 @@ public class LevelManager : MonoBehaviour {
 			t.position += Vector3.down*downSpeed * deltaTime;
 		}
 		if (spawnTimer <= 0) {
+			downSpeed += downSpeedIncrement;
 			int x=0;
 			spawnTimer += spawnInterval / downSpeed;
 			Vector3 pos = new Vector3(0, AreaLimits.UpLimit()+1+spawnTimer*downSpeed, 0);
@@ -110,6 +111,8 @@ public class LevelManager : MonoBehaviour {
 	public float spawnInterval=1;
 	public float spawnTimer;
 	public float downSpeed=0.2f;
+
+	public float downSpeedIncrement=0.001f;
 
 
 	public int lastSizeSpawned=0;
