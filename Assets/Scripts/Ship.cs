@@ -11,7 +11,7 @@ public class Ship : MonoBehaviour {
 	public	int	max_bullet = 5;
 	public float	speed;
 	float last_load;
-	int nb_bullet;
+	int nb_bullet = max_bullet;
 	bool fire;
 
 	// Use this for initialization
@@ -70,6 +70,7 @@ public class Ship : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D collider) {
 		if (collider.CompareTag ("Block")) {
+			Debug.Log ("here");
 			Camera.main.gameObject.GetComponent<GameLogicManager> ().EndGame (false);
 		}
 	}
