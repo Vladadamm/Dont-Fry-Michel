@@ -9,7 +9,7 @@ public class Fish : MonoBehaviour {
 	public Rigidbody2D rb;
 	public int	jump = 300;
 	public int	move = 100;
-	float boost = 1;
+	float boost = 0.01f;
 	bool is_jump;
 	float x;
 	float y;

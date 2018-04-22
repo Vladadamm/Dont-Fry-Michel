@@ -1,0 +1,688 @@
+fileFormatVersion: 2
+guid: a94fd7d9d9201f34f9f45fda869a525d
+timeCreated: 1524390872
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: BG-oil-01_0
+    21300002: BG-oil-01_1
+    21300004: BG-oil-01_2
+    21300006: BG-oil-01_3
+    21300008: BG-oil-01_4
+    21300010: BG-oil-01_5
+    21300012: BG-oil-01_6
+    21300014: BG-oil-01_7
+    21300016: BG-oil-01_8
+    21300018: BG-oil-01_9
+    21300020: BG-oil-01_10
+    21300022: BG-oil-01_11
+    21300024: BG-oil-01_12
+    21300026: BG-oil-01_13
+    21300028: BG-oil-01_14
+    21300030: BG-oil-01_15
+    21300032: BG-oil-01_16
+    21300034: BG-oil-01_17
+    21300036: BG-oil-01_18
+    21300038: BG-oil-01_19
+    21300040: BG-oil-01_20
+    21300042: BG-oil-01_21
+    21300044: BG-oil-01_22
+    21300046: BG-oil-01_23
+    21300048: BG-oil-01_24
+    21300050: BG-oil-01_25
+    21300052: BG-oil-01_26
+    21300054: BG-oil-01_27
+    21300056: BG-oil-01_28
+    21300058: BG-oil-01_29
+    21300060: BG-oil-01_30
+    21300062: BG-oil-01_31
+    21300064: BG-oil-01_32
+    21300066: BG-oil-01_33
+    21300068: BG-oil-01_34
+    21300070: BG-oil-01_35
+    21300072: BG-oil-01_36
+    21300074: BG-oil-01_37
+    21300076: BG-oil-01_38
+    21300078: BG-oil-01_39
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BG-oil-01_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1494
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_1
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 1494
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_2
+      rect:
+        serializedVersion: 2
+        x: 2402
+        y: 1494
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_3
+      rect:
+        serializedVersion: 2
+        x: 3603
+        y: 1494
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_4
+      rect:
+        serializedVersion: 2
+        x: 4804
+        y: 1494
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_5
+      rect:
+        serializedVersion: 2
+        x: 6005
+        y: 1494
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_6
+      rect:
+        serializedVersion: 2
+        x: 7206
+        y: 1494
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_7
+      rect:
+        serializedVersion: 2
+        x: 8407
+        y: 1494
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_8
+      rect:
+        serializedVersion: 2
+        x: 9608
+        y: 1494
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_9
+      rect:
+        serializedVersion: 2
+        x: 10809
+        y: 1494
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 996
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_11
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 996
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_12
+      rect:
+        serializedVersion: 2
+        x: 2402
+        y: 996
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_13
+      rect:
+        serializedVersion: 2
+        x: 3603
+        y: 996
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_14
+      rect:
+        serializedVersion: 2
+        x: 4804
+        y: 996
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_15
+      rect:
+        serializedVersion: 2
+        x: 6005
+        y: 996
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_16
+      rect:
+        serializedVersion: 2
+        x: 7206
+        y: 996
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_17
+      rect:
+        serializedVersion: 2
+        x: 8407
+        y: 996
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_18
+      rect:
+        serializedVersion: 2
+        x: 9608
+        y: 996
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_19
+      rect:
+        serializedVersion: 2
+        x: 10809
+        y: 996
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 498
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_21
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 498
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_22
+      rect:
+        serializedVersion: 2
+        x: 2402
+        y: 498
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_23
+      rect:
+        serializedVersion: 2
+        x: 3603
+        y: 498
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_24
+      rect:
+        serializedVersion: 2
+        x: 4804
+        y: 498
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_25
+      rect:
+        serializedVersion: 2
+        x: 6005
+        y: 498
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_26
+      rect:
+        serializedVersion: 2
+        x: 7206
+        y: 498
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_27
+      rect:
+        serializedVersion: 2
+        x: 8407
+        y: 498
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_28
+      rect:
+        serializedVersion: 2
+        x: 9608
+        y: 498
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_29
+      rect:
+        serializedVersion: 2
+        x: 10809
+        y: 498
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_31
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 0
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_32
+      rect:
+        serializedVersion: 2
+        x: 2402
+        y: 0
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_33
+      rect:
+        serializedVersion: 2
+        x: 3603
+        y: 0
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_34
+      rect:
+        serializedVersion: 2
+        x: 4804
+        y: 0
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_35
+      rect:
+        serializedVersion: 2
+        x: 6005
+        y: 0
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_36
+      rect:
+        serializedVersion: 2
+        x: 7206
+        y: 0
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_37
+      rect:
+        serializedVersion: 2
+        x: 8407
+        y: 0
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_38
+      rect:
+        serializedVersion: 2
+        x: 9608
+        y: 0
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BG-oil-01_39
+      rect:
+        serializedVersion: 2
+        x: 10809
+        y: 0
+        width: 1201
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

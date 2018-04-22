@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4292110214183206}
   - component: {fileID: 212641055967719874}
   - component: {fileID: 58385421886724524}
+  - component: {fileID: 114697556897434614}
   - component: {fileID: 50917206037623842}
   m_Layer: 0
   m_Name: BonusCannon
@@ -77,6 +78,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.25
+--- !u!114 &114697556897434614
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1820859314635284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dae95206dbf1449cb6aa10af37199fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212641055967719874
 SpriteRenderer:
   m_ObjectHideFlags: 1
