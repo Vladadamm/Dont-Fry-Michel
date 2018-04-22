@@ -12,7 +12,6 @@ public class Ship : MonoBehaviour {
 	public float	speed;
 	float last_load;
 	int nb_bullet;
-	bool fire;
 
 	// Use this for initialization
 	void Start () {
@@ -50,20 +49,14 @@ public class Ship : MonoBehaviour {
 			else if (speed < 0)
 				speed += Time.fixedDeltaTime;
 		}
-		if (Input.GetKey(InputManager.getInstance ().keyBinds ["Ship_fire"])) {
-			fire = true;
-		}
-		if (fire == true) {
+		if (Input.GetKey (InputManager.getInstance ().keyBinds ["Ship_fire"])) {
 			if (nb_bullet > 0) {
 				nb_bullet--;
 				GameObject bullet = (GameObject)GameObject.Instantiate (Resources.Load ("Bullet"));
 				bullet.transform.position = transform.position;
-			}
-			if (nb_bullet <= 0)
-				fire = false;
 				
-		} 
-		if (fire == false && Time.fixedTime >= last_load + load_rate && nb_bullet < max_bullet) {
+			}
+		}else if (Time.fixedTime >= last_load + load_rate && nb_bullet < max_bullet) {
 			nb_bullet += 1;
 			last_load = Time.fixedTime;
 		}
