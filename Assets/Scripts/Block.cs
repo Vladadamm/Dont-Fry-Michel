@@ -17,12 +17,20 @@ public class Block : MonoBehaviour {
 	public void Damage(int dmg){
 		health -= dmg;
 		if (health <= 0) {
+			float rand=Random.value;
+			if (rand < bonusBourrinWeight) {
+				GameObject g = (GameObject)GameObject.Instantiate (Resources.Load ("BonusBourrin"));
+				g.transform.position = transform.position;
+			}
 			GameObject.Destroy (gameObject);
 		} else {
 			transform.GetComponent<SpriteRenderer>().color = Color.white * (health / (float)maxHealth);
 		}
 	}
 
+
 	public int maxHealth;
 	public int health;
+
+	public float bonusBourrinWeight = 0.1f;
 }

@@ -79,4 +79,8 @@ public class Fish : MonoBehaviour {
 	{
 		boost += 0.1f;
 	}
+
+	void OnDisable(){
+		rb.velocity = Vector2.zero;
+	}
 }
