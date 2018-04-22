@@ -80,6 +80,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 50
   health: 0
+  bonusBourrinWeight: 0.1
+  bonusCannonWeight: 0.05
 --- !u!212 &212211596547218182
 SpriteRenderer:
   m_ObjectHideFlags: 1

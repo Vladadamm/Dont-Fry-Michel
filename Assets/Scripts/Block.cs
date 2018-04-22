@@ -21,6 +21,9 @@ public class Block : MonoBehaviour {
 			if (rand < bonusBourrinWeight && transform.position.y - 1 > AreaLimits.BottomLimit()) {
 				GameObject g = (GameObject)GameObject.Instantiate (Resources.Load ("BonusBourrin"));
 				g.transform.position = transform.position;
+			}else if (rand < (bonusBourrinWeight + bonusCannonWeight) && transform.position.y - 1 > AreaLimits.BottomLimit()) {
+				GameObject g = (GameObject)GameObject.Instantiate (Resources.Load ("BonusCannon"));
+				g.transform.position = transform.position;
 			}
 			GameObject.Destroy (gameObject);
 		} else {
@@ -33,4 +36,5 @@ public class Block : MonoBehaviour {
 	public int health;
 
 	public float bonusBourrinWeight = 0.1f;
+	public float bonusCannonWeight = 0.05f;
 }

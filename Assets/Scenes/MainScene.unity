@@ -1459,8 +1459,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnInterval: 1
   spawnTimer: 0
-  downSpeed: 0.5
-  downSpeedIncrement: 0.001
+  downSpeed: 0.3
+  downSpeedIncrement: 0.02
   lastSizeSpawned: 0
   lastColumnSpawned: 0
   emptyLaneWeight: 0.25
