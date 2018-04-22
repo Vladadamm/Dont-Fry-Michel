@@ -25,67 +25,76 @@ public class LevelManager : MonoBehaviour {
 		}
 		if (spawnTimer <= 0) {
 			downSpeed += downSpeedIncrement;
-			int x=0;
 			spawnTimer += spawnInterval / downSpeed;
-			Vector3 pos = new Vector3(0, AreaLimits.UpLimit()+1+spawnTimer*downSpeed, 0);
-			float randBlock = Random.value;
-			string chosenBlock;
-			if (randBlock < BlockWeightShort) {
-				//Bloc court couvrant bloc court : pas possible
-				if (lastSizeSpawned == 1) {
-					x = Random.Range (0, AreaLimits.BlockColumnsCount ()-1);
-					if (x >= lastColumnSpawned)
-						++x;
+			float randEmptyLane = Random.value;
+			if (randEmptyLane >= emptyLaneWeight || isLastEmpty) {
+				isLastEmpty = false;
+				int x = 0;
+				Vector3 pos = new Vector3 (0, AreaLimits.UpLimit () + 1 + spawnTimer * downSpeed, 0);
+				float randBlock = Random.value;
+				string chosenBlock;
+				if (randBlock < BlockWeightShort) {
+					//Bloc court couvrant bloc court : pas possible
+					if (lastSizeSpawned == 1) {
+						x = Random.Range (0, AreaLimits.BlockColumnsCount () - 1);
+						if (x >= lastColumnSpawned)
+							++x;
+					} else {
+						x = Random.Range (0, AreaLimits.BlockColumnsCount ());
+					}
+					chosenBlock = "BlockShort";
+					lastSizeSpawned = 1;
+				} else if (randBlock < BlockWeightShort + BlockWeightMedium) {
+					//Bloc medium couvrant bloc medium : pas possible
+					if (lastSizeSpawned == 2) {
+						x = Random.Range (0, AreaLimits.BlockColumnsCount () - 2);
+						if (x >= lastColumnSpawned)
+							++x;
+					} else if (lastSizeSpawned == 1) {
+						//Bloc medium couvrant bloc court : pas possible
+						x = Random.Range (0, AreaLimits.BlockColumnsCount () - 3);
+						if (x >= lastColumnSpawned - 1)
+							x += 2;
+						;
+					} else {
+						x = Random.Range (0, AreaLimits.BlockColumnsCount () - 1);
+					}
+					pos.x += 0.5f;
+					chosenBlock = "BlockMedium";
+					lastSizeSpawned = 2;
 				} else {
-					x = Random.Range (0, AreaLimits.BlockColumnsCount ());
+					//Bloc long couvrant bloc long : pas possible
+					if (lastSizeSpawned == 3) {
+						x = Random.Range (0, AreaLimits.BlockColumnsCount () - 3);
+						if (x >= lastColumnSpawned)
+							++x;
+					} else if (lastSizeSpawned == 2) {
+						//Bloc long couvrant bloc medium : pas possible
+						x = Random.Range (0, AreaLimits.BlockColumnsCount () - 4);
+						if (x >= lastColumnSpawned - 1)
+							x += 2;
+						;
+					} else if (lastSizeSpawned == 1) {
+						//Bloc long couvrant bloc court : pas possible
+						x = Random.Range (0, AreaLimits.BlockColumnsCount () - 5);
+						if (x >= lastColumnSpawned - 2)
+							x += 3;
+					} else {
+						x = Random.Range (0, AreaLimits.BlockColumnsCount () - 2);
+					}
+					pos.x += 1f;
+					chosenBlock = "BlockLong";
+					lastSizeSpawned = 3;
 				}
-				chosenBlock = "BlockShort";
-				lastSizeSpawned = 1;
-			} else if (randBlock < BlockWeightShort + BlockWeightMedium) {
-				//Bloc medium couvrant bloc medium : pas possible
-				if (lastSizeSpawned == 2) {
-					x = Random.Range (0, AreaLimits.BlockColumnsCount () - 2);
-					if (x >= lastColumnSpawned)
-						++x;
-				} else if (lastSizeSpawned == 1) {
-					//Bloc medium couvrant bloc court : pas possible
-					x = Random.Range (0, AreaLimits.BlockColumnsCount () - 3);
-					if (x >= lastColumnSpawned-1)
-						x += 2;;
-				} else {
-					x = Random.Range (0, AreaLimits.BlockColumnsCount () - 1);
-				}
-				pos.x += 0.5f;
-				chosenBlock = "BlockMedium";
-				lastSizeSpawned = 2;
+				lastColumnSpawned = x;
+				GameObject g;
+				pos.x += ConvertColumnToPos (x);
+				g = (GameObject)GameObject.Instantiate (Resources.Load (chosenBlock));
+				g.transform.position = pos;
+				g.transform.SetParent (transform);
 			} else {
-				//Bloc long couvrant bloc long : pas possible
-				if (lastSizeSpawned == 3) {
-					x = Random.Range (0, AreaLimits.BlockColumnsCount ()-3);
-					if (x >= lastColumnSpawned)
-						++x;
-				} else if(lastSizeSpawned==2){
-					//Bloc long couvrant bloc medium : pas possible
-					x = Random.Range (0, AreaLimits.BlockColumnsCount ()-4);
-					if (x >= lastColumnSpawned-1)
-						x += 2;;
-				}else if(lastSizeSpawned==1){
-					//Bloc long couvrant bloc court : pas possible
-					x = Random.Range (0, AreaLimits.BlockColumnsCount ()-5);
-					if (x >= lastColumnSpawned-2)
-						x += 3;
-
-				}
-				pos.x += 1f;
-				chosenBlock = "BlockLong";
-				lastSizeSpawned = 3;
+				isLastEmpty = true;
 			}
-			lastColumnSpawned = x;
-			GameObject g;
-			pos.x += ConvertColumnToPos (x);
-			g=(GameObject)GameObject.Instantiate (Resources.Load (chosenBlock));
-			g.transform.position = pos;
-			g.transform.SetParent (transform);
 		}
 		spawnTimer -= deltaTime;
 	}
@@ -98,6 +107,7 @@ public class LevelManager : MonoBehaviour {
 		g.transform.SetParent (transform);
 		lastColumnSpawned = AreaLimits.BlockColumnsCount()/2;
 		lastSizeSpawned = 3;
+		isLastEmpty = true;
 		for(int i=0;i<AreaLimits.SizeY()/2;++i){
 			UpdateGen(spawnInterval/downSpeed);
 		}
@@ -118,8 +128,11 @@ public class LevelManager : MonoBehaviour {
 	public int lastSizeSpawned=0;
 	public int lastColumnSpawned=0;
 
+	public float emptyLaneWeight=0.4f;
+	public bool isLastEmpty;
+
 	//Block Weights
-	public float BlockWeightShort = 0.3f;
-	public float BlockWeightMedium = 0.4f;
-	public float BlockWeightLong = 0.3f;
+	public float BlockWeightShort = 0.2f;
+	public float BlockWeightMedium = 0.45f;
+	public float BlockWeightLong = 0.35f;
 }
