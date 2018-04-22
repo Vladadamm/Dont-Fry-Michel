@@ -4,32 +4,28 @@ using UnityEngine;
 
 public class SoundManager {
 
-
-	Object [] sprites;
+	Object[] audio;
 
 
 	void Start(){
-		sprites = Resources.LoadAll ("pipette-sprites-02");
+		audio = Resources.LoadAll("SOUND"); 
 	}
 
 	public void MakeFireSound()
 	{
-		int a;
-
-		if (a
-		MakeSound(explosionSound);
+		MakeSound((AudioSource) audio[7 + Random.Range (0, 4)]);
 	}
 
 	public void MakeDeathCuistotSound()
 	{
-		MakeSound(playerShotSound);
+		MakeSound((AudioSource)audio[1]);
 	}
 
 	public void MakeHitBlockSound()
 	{
-		MakeSound(enemyShotSound);
+		MakeSound((AudioSource)audio[2]);
 	}
-	// Update is called once per frame
+
 	private void MakeSound(AudioSource son)
 	{
 		son.Play();
