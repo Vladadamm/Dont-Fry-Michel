@@ -16,7 +16,7 @@ public class Bullet : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		rb.velocity = new Vector2 (0, vitesse * Time.fixedDeltaTime);
-		if (transform.position.y > AreaLimits.UpLimit())
+		if (transform.position.y > AreaLimits.UpLimit() + 1F)
 			Destroy (gameObject);
 	}
 

@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4804454554904916}
+  - component: {fileID: 114344696754007160}
   m_Layer: 0
   m_Name: CannonBullets
   m_TagString: Untagged
@@ -407,6 +408,17 @@ MonoBehaviour:
   vitesse: 200
   life: 1
   dmg: 5
+--- !u!114 &114344696754007160
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1001786247541226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dae95206dbf1449cb6aa10af37199fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114436133168834982
 MonoBehaviour:
   m_ObjectHideFlags: 1
