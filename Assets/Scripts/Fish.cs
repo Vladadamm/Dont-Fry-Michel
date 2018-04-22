@@ -17,6 +17,7 @@ public class Fish : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		transform.position = new Vector3 (AreaLimits.CenterX(), AreaLimits.CenterY()+2, 0);
+
 		rb = GetComponent<Rigidbody2D>();
 		is_jump = false;
 		enabled = false;
