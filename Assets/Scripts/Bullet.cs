@@ -22,12 +22,14 @@ public class Bullet : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D collider) {
 		if (collider.CompareTag ("Block")) {
+			Camera.main.gameObject.GetComponent<SoundManager> ().MakeHitBlockSound();
 			collider.transform.GetComponent<Block> ().Damage (dmg);
 			life -= 1;
 			if (life <= 0)
 				Destroy (gameObject);
 		}
 		if (collider.name == "Fish") {
+			Camera.main.gameObject.GetComponent<SoundManager> ().MakeHitBlockSound();
 			collider.transform.GetComponent<Fish> ().SetBoost ();
 			life -= 1;
 			if (life <= 0)

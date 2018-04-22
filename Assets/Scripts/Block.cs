@@ -31,6 +31,10 @@ public class Block : MonoBehaviour {
 		}
 	}
 
+	void linea_color()
+	{
+		transform.GetComponent<SpriteRenderer> ().color = Color.blue++;
+	}
 
 	public int maxHealth;
 	public int health;

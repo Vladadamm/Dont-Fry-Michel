@@ -55,6 +55,7 @@ public class Ship : MonoBehaviour {
 			}
 			if (Input.GetKey (InputManager.getInstance ().keyBinds ["Ship_fire"])) {
 				if (nb_bullet >= min_bullet + min_bullet_add || nbBulletThrown != 0 && nb_bullet > 0) {
+					Camera.main.gameObject.GetComponent<SoundManager> ().MakeFireSound ();
 					nbBulletThrown++;
 					nb_bullet--;
 					GameObject bullet = (GameObject)GameObject.Instantiate (Resources.Load ("Bullet"));
@@ -66,7 +67,7 @@ public class Ship : MonoBehaviour {
 			}
 			if (Input.GetKeyUp (InputManager.getInstance ().keyBinds ["Ship_fire"]))
 				nbBulletThrown = 0;
-			GetComponent<SpriteRenderer>().sprite = (Sprite)sprites [nb_sprite * nb_bullet / max_bullet];
+			//GetComponent<SpriteRenderer>().sprite = (Sprite)sprites [nb_sprite * nb_bullet / max_bullet];
 			if (hasBuff) {
 				remainingBuffTime -= Time.fixedDeltaTime;
 				if (remainingBuffTime <= 0)
@@ -78,6 +79,7 @@ public class Ship : MonoBehaviour {
 			} else if (remainingLoadTime <= 0 && cannonRemainingBullets == 0) {
 				cannonRemainingBullets = cannonNbBullets;
 			} else {
+				Camera.main.gameObject.GetComponent<SoundManager> ().MakeBonusSound();
 				GameObject bullets = (GameObject)GameObject.Instantiate (Resources.Load ("CannonBullets"));
 				bullets.transform.position = transform.position + Vector3.up;
 				if(nb_bullet>0)
@@ -98,6 +100,7 @@ public class Ship : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D collider) {
 		if (collider.CompareTag ("Block")) {
+			Camera.main.gameObject.GetComponent<SoundManager> ().MakeDeathCuistotSound();
 			Camera.main.gameObject.GetComponent<GameLogicManager> ().EndGame (false);
 		}
 		if (collider.CompareTag ("Bonus")) {
