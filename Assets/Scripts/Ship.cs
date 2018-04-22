@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Ship : MonoBehaviour {
-	public Animation	animation;
+
+	public SpriteRenderer renderer;
+
+	public	int		nb_sprite = 61;
 	public	float	size_sprite = 0.2f;
 	public	float	acceleration = 5f;
 	public float	max_speed = 5f;
@@ -12,13 +15,19 @@ public class Ship : MonoBehaviour {
 	public int min_bullet = 3;
 	float	speed;
 	float last_load;
+	Object [] sprites;
+
 	public int nb_bullet;
 	public int nbBulletThrown;
 
 	// Use this for initialization
 	void Start () {
-		transform.position = new Vector3 ((AreaLimits.LeftLimit () + AreaLimits.RightLimit ()) / 2, AreaLimits.BottomLimit ()+0.5f, 0);
+		transform.position = new Vector3 ((AreaLimits.LeftLimit () + AreaLimits.RightLimit ()) / 2, AreaLimits.BottomLimit () + 1f, 0);
 		enabled = false;
+
+		renderer =  GetComponent<SpriteRenderer>();
+		sprites = Resources.LoadAll ("pipette-sprites-02");
+
 		nb_bullet = min_bullet;
 		nbBulletThrown = 0;
 	}
@@ -26,18 +35,12 @@ public class Ship : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		InputM();
-		//AnimationM ();
 		if (transform.position.x + speed * Time.fixedDeltaTime > AreaLimits.LeftLimit() + size_sprite && transform.position.x + speed * Time.fixedDeltaTime < AreaLimits.RightLimit() - size_sprite)
 			transform.position = new Vector3 (transform.position.x + speed * Time.fixedDeltaTime, transform.position.y);
 		else
 			speed = -(speed / 2);
 
 	}
-
-	/*void AnimationM(){
-		if (Time.fixedTime < last_shot + fire_rate)
-			animation.Play();
-	}*/
 
 	void InputM(){
 		if (Input.GetKey (InputManager.getInstance ().keyBinds ["Ship_right"])) {
@@ -65,6 +68,7 @@ public class Ship : MonoBehaviour {
 		}
 		if (Input.GetKeyUp (InputManager.getInstance ().keyBinds ["Ship_fire"]))
 			nbBulletThrown = 0;
+		renderer.sprite = (Sprite)sprites [nb_sprite * nb_bullet /max_bullet];
 	}
 
 	void OnTriggerEnter2D(Collider2D collider) {
