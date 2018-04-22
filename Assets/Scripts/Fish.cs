@@ -9,17 +9,18 @@ public class Fish : MonoBehaviour {
 	public Rigidbody2D rb;
 	public int	jump = 300;
 	public int	move = 100;
-	int boost = 1;
+	float boost = 1;
 	bool is_jump;
 	float x;
 	float y;
 
 	// Use this for initialization
 	void Start () {
-		transform.position = new Vector3 ((AreaLimits.LeftLimit () + AreaLimits.RightLimit ()) / 2, +AreaLimits.UpLimit(), 0);
+		transform.position = new Vector3 (AreaLimits.CenterX(), AreaLimits.CenterY()+2, 0);
 		rb = GetComponent<Rigidbody2D>();
 		is_jump = false;
-		Michel2.SetActive(false);
+		enabled = false;
+		//Michel2.SetActive(false);
 	}
 
 	// Update is called once per frame
@@ -45,7 +46,7 @@ public class Fish : MonoBehaviour {
 				}*/
 		}
 		if (transform.position.y < AreaLimits.BottomLimit () - size_sprite) {
-			GameObject.FindGameObjectWithTag ("Finish").transform.GetChild (0).gameObject.SetActive (true);
+			Camera.main.gameObject.GetComponent<GameLogicManager> ().EndGame (true);
 		}
 	}
 
@@ -76,7 +77,6 @@ public class Fish : MonoBehaviour {
 
 	public void SetBoost()
 	{
-		boost += 1;
+		boost += 0.1f;
 	}
-
 }

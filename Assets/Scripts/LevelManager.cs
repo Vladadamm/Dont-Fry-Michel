@@ -8,6 +8,7 @@ public class LevelManager : MonoBehaviour {
 	void Start () {
 		spawnTimer = spawnInterval / downSpeed;
 		InitSpawn ();
+		enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -96,7 +97,7 @@ public class LevelManager : MonoBehaviour {
 		g.transform.SetParent (transform);
 		lastColumnSpawned = AreaLimits.BlockColumnsCount()/2;
 		lastSizeSpawned = 3;
-		for(int i=0;i<(AreaLimits.UpLimit()-AreaLimits.BottomLimit())/(spawnInterval/downSpeed);++i){
+		for(int i=0;i<AreaLimits.SizeY()/2;++i){
 			UpdateGen(spawnInterval/downSpeed);
 		}
 		spawnTimer = spawnInterval / downSpeed;
