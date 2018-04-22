@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Ship : MonoBehaviour {
 
-	public SpriteRenderer renderer;
 
 	public	int		nb_sprite = 61;
 	public	float	size_sprite = 0.2f;
@@ -25,10 +24,7 @@ public class Ship : MonoBehaviour {
 	void Start () {
 		transform.position = new Vector3 ((AreaLimits.LeftLimit () + AreaLimits.RightLimit ()) / 2, AreaLimits.BottomLimit () + 1f, 0);
 		enabled = false;
-
-		renderer =  GetComponent<SpriteRenderer>();
 		sprites = Resources.LoadAll ("pipette-sprites-02");
-
 		nb_bullet = min_bullet;
 		nbBulletThrown = 0;
 	}
@@ -70,7 +66,7 @@ public class Ship : MonoBehaviour {
 			}
 			if (Input.GetKeyUp (InputManager.getInstance ().keyBinds ["Ship_fire"]))
 				nbBulletThrown = 0;
-			renderer.sprite = (Sprite)sprites [nb_sprite * nb_bullet / max_bullet];
+			GetComponent<SpriteRenderer>().sprite = (Sprite)sprites [nb_sprite * nb_bullet / max_bullet];
 			if (hasBuff) {
 				remainingBuffTime -= Time.fixedDeltaTime;
 				if (remainingBuffTime <= 0)
