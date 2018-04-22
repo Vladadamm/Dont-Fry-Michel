@@ -18,7 +18,7 @@ public class Block : MonoBehaviour {
 		health -= dmg;
 		if (health <= 0) {
 			float rand=Random.value;
-			if (rand < bonusBourrinWeight) {
+			if (rand < bonusBourrinWeight && transform.position.y - 1 > AreaLimits.BottomLimit()) {
 				GameObject g = (GameObject)GameObject.Instantiate (Resources.Load ("BonusBourrin"));
 				g.transform.position = transform.position;
 			}
