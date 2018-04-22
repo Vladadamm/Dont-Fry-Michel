@@ -37,6 +37,9 @@ public class Fish : MonoBehaviour {
 			}
 		}
 		if (transform.position.y < AreaLimits.BottomLimit () - size_sprite) {
+			transform.GetComponentInChildren<Animator> ().enabled = false;
+			transform.GetComponentInChildren<SpriteRenderer> ().color = new Color(0, 0, 0);
+			Camera.main.gameObject.GetComponent<SoundManager> ().MakeDeathFishSound();
 			Camera.main.gameObject.GetComponent<GameLogicManager> ().EndGame (true);
 		}
 	}
@@ -52,7 +55,8 @@ public class Fish : MonoBehaviour {
 			if (Input.GetKey (InputManager.getInstance ().keyBinds ["Fish_left"])) {
 				x =  boost * -move * Time.fixedDeltaTime;
 			}
-				if (Input.GetKey (InputManager.getInstance ().keyBinds ["Fish_jump"]) && is_jump == false) {
+			if (Input.GetKey (InputManager.getInstance ().keyBinds ["Fish_jump"]) && is_jump == false) {
+				Camera.main.gameObject.GetComponent<SoundManager> ().MakeJumpFishSound();
 				y =   jump * Time.fixedDeltaTime;
 				is_jump = true;
 			}
@@ -63,6 +67,8 @@ public class Fish : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D collision) {
+		if (is_jump == true)
+			Camera.main.gameObject.GetComponent<SoundManager> ().MakeHitFishSound();
 		is_jump = false;
 	}
 

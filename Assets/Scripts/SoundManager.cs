@@ -8,6 +8,10 @@ public class SoundManager : MonoBehaviour {
 	public	AudioClip[] DeathCuisto_audio;
 	public	AudioClip[] HitBlock_audio;
 	public	AudioClip[] BonusCuisto_audio;
+	public	AudioClip[] DeathFish_audio;
+	public	AudioClip[] JumpFish_audio;
+	public	AudioClip[] HitFish_audio;
+
 	float	Fire_time;
 	float	HitBlock_time;
 	float	DeathCuisto_time;
@@ -40,7 +44,28 @@ public class SoundManager : MonoBehaviour {
 
 	public void MakeBonusSound(){
 		if (Time.fixedTime > BonusCuisto_time + 0.1f) {
-			MakeSound(HitBlock_audio[Random.Range(0, 5)]);
+			MakeSound(BonusCuisto_audio[Random.Range(0, 3)]);
+			BonusCuisto_time = Time.fixedTime;
+		}
+	}
+
+	public void MakeDeathFishSound(){
+		if (Time.fixedTime > BonusCuisto_time + 0.1f) {
+			MakeSound(DeathFish_audio[Random.Range(0, 3)]);
+			BonusCuisto_time = Time.fixedTime;
+		}
+	}
+
+	public void MakeJumpFishSound(){
+		if (Time.fixedTime > BonusCuisto_time + 0.1f) {
+			MakeSound(JumpFish_audio[Random.Range(0, 3)]);
+			BonusCuisto_time = Time.fixedTime;
+		}
+	}
+
+	public void MakeHitFishSound(){
+		if (Time.fixedTime > BonusCuisto_time + 0.1f) {
+			MakeSound(HitFish_audio[Random.Range(0, 3)]);
 			BonusCuisto_time = Time.fixedTime;
 		}
 	}
