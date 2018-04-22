@@ -7,17 +7,20 @@ public class Ship : MonoBehaviour {
 	public	float	size_sprite = 0.2f;
 	public	float	acceleration = 5f;
 	public float	max_speed = 5f;
-	public float	load_rate = 0.5f;
-	public	int	max_bullet = 5;
+	public float	load_rate = 0.25f;
+	public	int	max_bullet = 10;
+	public int min_bullet = 3;
 	float	speed;
 	float last_load;
-	int nb_bullet;
+	public int nb_bullet;
+	public int nbBulletThrown;
 
 	// Use this for initialization
 	void Start () {
 		transform.position = new Vector3 ((AreaLimits.LeftLimit () + AreaLimits.RightLimit ()) / 2, AreaLimits.BottomLimit ()+0.5f, 0);
 		enabled = false;
-		nb_bullet = max_bullet;
+		nb_bullet = min_bullet;
+		nbBulletThrown = 0;
 	}
 	
 	// Update is called once per frame
@@ -50,16 +53,18 @@ public class Ship : MonoBehaviour {
 				speed = Mathf.Min(0,speed+5*Time.fixedDeltaTime);
 		}
 		if (Input.GetKey (InputManager.getInstance ().keyBinds ["Ship_fire"])) {
-			if (nb_bullet > 0) {
+			if (nb_bullet >= min_bullet || nbBulletThrown != 0 && nb_bullet > 0) {
+				nbBulletThrown++;
 				nb_bullet--;
 				GameObject bullet = (GameObject)GameObject.Instantiate (Resources.Load ("Bullet"));
 				bullet.transform.position = transform.position;
-				
 			}
-		}else if (Time.fixedTime >= last_load + load_rate && nb_bullet < max_bullet) {
+		} else if (Time.fixedTime >= last_load + load_rate && nb_bullet < max_bullet) {
 			nb_bullet += 1;
 			last_load = Time.fixedTime;
 		}
+		if (Input.GetKeyUp (InputManager.getInstance ().keyBinds ["Ship_fire"]))
+			nbBulletThrown = 0;
 	}
 
 	void OnTriggerEnter2D(Collider2D collider) {

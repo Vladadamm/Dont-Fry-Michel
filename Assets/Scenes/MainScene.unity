@@ -2053,7 +2053,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1928396777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2069,8 +2069,11 @@ MonoBehaviour:
   size_sprite: 0.2
   acceleration: 20
   max_speed: 5
-  load_rate: 1
-  max_bullet: 3
+  load_rate: 0.4
+  max_bullet: 10
+  min_bullet: 3
+  nb_bullet: 0
+  nbBulletThrown: 0
 --- !u!212 &1928396778
 SpriteRenderer:
   m_ObjectHideFlags: 0

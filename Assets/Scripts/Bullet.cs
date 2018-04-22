@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour {
-	public int vitesse = 200;
+	public int vitesse = 300;
 	public	int life = 1;
+	public int dmg=10;
 	Rigidbody2D	rb;
 
 	// Use this for initialization
@@ -21,7 +22,7 @@ public class Bullet : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D collider) {
 		if (collider.CompareTag ("Block")) {
-			collider.transform.GetComponent<Block> ().Damage (1000);
+			collider.transform.GetComponent<Block> ().Damage (dmg);
 			life -= 1;
 			if (life <= 0)
 				Destroy (gameObject);
