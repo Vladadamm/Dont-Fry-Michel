@@ -4283,8 +4283,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 450, y: -600}
-  m_SizeDelta: {x: 700, y: 800}
+  m_AnchoredPosition: {x: 475, y: -650}
+  m_SizeDelta: {x: 750, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1850864401
 MonoBehaviour:
@@ -4307,18 +4307,19 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 347389fbf010e0b4ca0735e70bc38739, type: 3}
-    m_FontSize: 48
+    m_FontSize: 56
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 48
+    m_MaxSize: 64
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 2
-  m_Text: BLA
+    m_LineSpacing: 2.75
+  m_Text: "Axel Born\t \t\t- Code\nGr\xE9gory Colletto \t- Code\nJ\xE9r\xE9my Forveille
+    \t- Art\nFlorian Costes \t\t- Audio\n\n\tThanks to Leonard Bertos for the lore."
 --- !u!222 &1850864402
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4564,7 +4565,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1972471166
 RectTransform:
   m_ObjectHideFlags: 0

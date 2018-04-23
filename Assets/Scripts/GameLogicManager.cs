@@ -27,7 +27,7 @@ public class GameLogicManager : MonoBehaviour {
 			timer -= Time.fixedDeltaTime;
 		}
 		if (state == 2) {
-			if (Input.GetKeyDown (InputManager.getInstance ().keyBinds ["Escape"]))
+			if (Input.GetKeyDown (InputManager.getInstance ().keyBinds ["Escape"]) || Input.GetKeyDown(InputManager.getInstance().keyBinds["Enter"]))
 				SceneManager.LoadScene (0);
 		}
 	}

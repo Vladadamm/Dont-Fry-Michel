@@ -25,11 +25,12 @@ public class InputManager {
 		keyBinds.Add ("Ship_right", KeyCode.RightArrow);
 		keyBinds.Add ("Ship_power", KeyCode.RightShift);
 		keyBinds.Add ("Fish_right", KeyCode.D);
-		keyBinds.Add ("Fish_left", KeyCode.Q);
-		keyBinds.Add ("Fish_jump", KeyCode.Z);
+		keyBinds.Add ("Fish_left", KeyCode.A);
+		keyBinds.Add ("Fish_jump", KeyCode.W);
 		keyBinds.Add ("Fish_build", KeyCode.S);
 		keyBinds.Add ("Fish_power", KeyCode.LeftShift);
 		keyBinds.Add ("Escape", KeyCode.Escape);
+		keyBinds.Add ("Enter", KeyCode.Return);
 	}
 	
 	//Redéfinition d'un keyBind 
